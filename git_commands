@@ -20,5 +20,5 @@ if [ $prev_comm_res -eq 0 ]; then
 	git push origin
 fi
 
-echo "GIT commands executed successfully"
+echo "GIT commands executed successfully "
 exit 0;
