@@ -1,0 +1,23 @@
+echo "Starting GIT commands"
+file_name=$1
+
+git add $file_name;
+rc=$?
+
+if [ $rc -eq 0 ]; then
+	prev_comm_res=0;
+else
+	prev_comm_res=1;
+	echo "git add $file_name failed";
+fi
+
+if [ $prev_comm_res -eq 0 ]; then
+	git commit -m "Modified"
+	prev_comm_res=0;
+fi
+
+if [ $prev_comm_res -eq 0 ]; then
+	git push origin
+fi
+
+exit 0;
